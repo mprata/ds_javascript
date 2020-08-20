@@ -98,3 +98,24 @@
 
         console.log([...iterable1]);
         // expected output: Array [1, 2, 3]
+        
+        
+        const obj = { x: 1, y: 2 };
+        
+        obj[Symbol.iterator] = function() {
+          return {
+            entries: Object.entries(this),
+            i: 0,
+            next() {
+              if (this.i >= this.entries.length) {
+                return { done: true, value: undefined };
+              }
+              return { 
+                done: false, 
+                value: {
+                  [this.entries[this.i][0]]: this.entries[this.i++][1]
+                } 
+              };
+            }
+          }
+        }
