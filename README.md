@@ -100,22 +100,13 @@
         // expected output: Array [1, 2, 3]
         
         
-        const obj = { x: 1, y: 2 };
-        
-        obj[Symbol.iterator] = function() {
-          return {
-            entries: Object.entries(this),
-            i: 0,
-            next() {
-              if (this.i >= this.entries.length) {
-                return { done: true, value: undefined };
-              }
-              return { 
-                done: false, 
-                value: {
-                  [this.entries[this.i][0]]: this.entries[this.i++][1]
-                } 
-              };
+        let jk = {x:1, y:2};
+        jk[Symbol.iterator] = function*() {
+            let keys = Object.keys(this);
+            for(let i = 0; i < keys.length; i++) {
+                yield this[keys[i]];
             }
-          }
+        }
+        for(const val of jk) {
+            console.log(val)
         }
