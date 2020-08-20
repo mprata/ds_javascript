@@ -110,3 +110,18 @@
         for(const val of jk) {
             console.log(val)
         }
+        
+# Pollyfill for Function.prototype.bind
+        Function.prototype.bind = function() {
+            const func = this;
+            const that = arguments[0];
+            let args = arguments.slice(1);
+            if (typeof func !== 'function') {
+                throw new TypeError('Function.prototype.bind - ' +
+                       'what is trying to be bound is not callable');
+              }
+            return function() {
+                let funcArgs = [...args, ...arguments];
+                return func.call(that, funcArgs);
+            }
+        }
