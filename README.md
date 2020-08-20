@@ -115,7 +115,8 @@
         Function.prototype.bind = function() {
             const func = this;
             const that = arguments[0];
-            let args = arguments.slice(1);
+            let args = [...arguments];
+            args.splice(0,1);
             if (typeof func !== 'function') {
                 throw new TypeError('Function.prototype.bind - ' +
                        'what is trying to be bound is not callable');
