@@ -112,6 +112,7 @@
         }
         
 # Pollyfill for Function.prototype.bind
+
         Function.prototype.bind = function() {
             const func = this;
             const that = arguments[0];
@@ -126,3 +127,18 @@
                 return func.call(that, funcArgs);
             }
         }
+        
+# Prototypal inheritance in javascript
+
+        function vehicle(type, color, engine) {
+            this.type = type;
+            this.color = color;
+            this.engine = engine;
+        }
+
+        function car(name) {
+            vehicle.call(this, "4 wheeler", "Blue", "1.3ltr");
+            this.name = name;
+        }
+
+        car.prototype = Object.create(vehicle.prototype);
