@@ -142,3 +142,23 @@
         }
 
         car.prototype = Object.create(vehicle.prototype);
+        
+# Pollyfill for Function.prototype.call
+
+        Function.prototype.myCall = function(...args) {
+            const func = this;
+            if (typeof func !== 'function') {
+                throw new TypeError('Function.prototype.myCall - ' +
+                    'what is trying to be bound is not callable');
+            }
+            const ref = args[0];
+            if (typeof ref !== 'object') {
+                func(...args)
+            } else {
+                args.splice(0,1);
+                const fnName = Symbol();
+                ref[fnName] = func;
+                ref[fnName](...args)
+                delete ref[fnName];
+            }
+        }
