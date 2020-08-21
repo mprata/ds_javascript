@@ -132,6 +132,7 @@ This page covers topics related to javascript or majorly asked questions in js i
         console.log(val)
     }
     ```
+    **[Back To Top](#table-of-contents)**
         
 # Pollyfill for Function.prototype.bind
 ```JavaScript
@@ -150,6 +151,7 @@ Function.prototype.bind = function() {
     }
 }
 ```
+**[Back To Top](#table-of-contents)**
         
 # Prototypal inheritance in javascript
 ```JavaScript
@@ -166,7 +168,8 @@ function car(name) {
 
 car.prototype = Object.create(vehicle.prototype);
 ```
-        
+**[Back To Top](#table-of-contents)**
+
 # Pollyfill for Function.prototype.call
 ```JavaScript
 Function.prototype.myCall = function(...args) {
@@ -187,7 +190,8 @@ Function.prototype.myCall = function(...args) {
     }
 }
 ```
-        
+**[Back To Top](#table-of-contents)**
+
 # Debounce implementation
 ```JavaScript
 function debounce(fnCallback, time){
@@ -203,6 +207,7 @@ function debounce(fnCallback, time){
     }
 }
 ```
+**[Back To Top](#table-of-contents)**
 
 # Throttle implementation
 ```JavaScript
@@ -222,3 +227,4 @@ function throttle(fnCallback, time){
     }
 }
 ```
+**[Back To Top](#table-of-contents)**
