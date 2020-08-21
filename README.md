@@ -162,3 +162,34 @@
                 delete ref[fnName];
             }
         }
+        
+# Debounce implementation
+        function debounce(fnCallback, time){
+            var timer;
+            return function(){
+                var context = this, args = arguments;
+                var later = function(){
+                    timer = null;
+                    fnCallback.apply(context, args);
+                }
+                clearTimeout(timer);
+                timer = setTimeout(later, time);
+            }
+        }
+
+# Throttle implementation
+        function throttle(fnCallback, time){
+            var timer;
+            return function(){
+                var context = this, args = arguments;
+                var later = function(){
+                    timer = false;
+                }
+                if(!timer){
+                    fnCallback.apply(context, arguments);
+                    timer = true;
+                    setTimeout(later, time);
+                }
+
+            }
+        }
