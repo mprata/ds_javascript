@@ -1,7 +1,17 @@
-| Topics  | 
-| ------------- |
-| New Features in ES6/ES2015  |
-| Pollyfill for Function.prototype.bind  |
+# JavaScript Topics
+
+This page covers topics related to javascript or majorly asked questions in js interviews
+
+### Table of Contents
+
+| No. | Topic |
+|---- | ---------
+| 1 | [New Features in ES6/ES2015](#new-features-in-es6es2015) |
+| 2 | [Pollyfill for Function.prototype.bind](#pollyfill-for-functionprototypebind)|
+| 3 | [Prototypal inheritance in JavaScript](#prototypal-inheritance-in-javascript)|
+| 4 | [Pollyfill for Function.prototype.call](#pollyfill-for-functionprototypecall)|
+| 5 | [Debounce implementation](#debounce-implementation)|
+| 6 | [Throttle implementation](#throttle-implementation)|
 
 # New Features in ES6/ES2015
 1. Default Parameters
